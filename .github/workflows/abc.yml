@@ -1,0 +1,18 @@
+---
+Event - push pull - trigger points
+Jobs:
+  job1:
+    steps:
+      on:ubuntu-latest
+      shell:bash
+      run: |
+          commands...
+          build
+          
+      
+      
+  
+  job2:
+  need:job1
+  testing
+  
