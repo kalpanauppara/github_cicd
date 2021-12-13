@@ -28,7 +28,7 @@ on:
         uses: actions/checkout@v2
         
       name: check-job
-       needs: job1
+       needs: checkout-job
        runs-on: ubuntu-latest
        strategy:
         matrix: 
