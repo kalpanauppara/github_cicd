@@ -1,0 +1,19 @@
+name: DataflowEXP_Workflow
+on:
+  push:
+    branches:
+    - 'feature/poc_dfexp'
+    #- '!development'
+    #- '!release/**'
+    # - '!master'
+    #- '!hotfix/**'
+  pull_request:
+    branches:
+    - 'poc_dfexp'
+   # - 'development'
+   # - 'release/**'
+   # - 'master'
+   # - 'hotfix/**'
+    types: 
+    - closed
+  
