@@ -44,6 +44,18 @@ on:
         echo "Listing modified files from the last commit:"
         git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt dataflow/templates/
         cat diff.txt
+        
+        - name: Dataflow working 
+        run: |
+        BRANCH=${GITHUB_REF#refs/heads/}
+        echo "$BRANCH"
+        if [[ $BRANCH == poc_dfexp ]]; then
+          ENV=exp
+        elif [[ $BRANCH == development ]]; then
+          ENV=dev
+        elif [[ $BRANCH == master ]]; then
+          ENV=prod
+        fi
 
        
      
