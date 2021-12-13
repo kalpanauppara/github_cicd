@@ -16,4 +16,35 @@ on:
    # - 'hotfix/**'
     types: 
     - closed
+    
+    jobs:
+      job1:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+        shell: bash
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      job2:
+       needs: job1
+       runs-on: ubuntu-latest
+       strategy:
+        matrix: 
+          directory: [dataflow/templates]
+       steps:
+       - name: Checkout code
+         uses: actions/checkout@v2
+         with:
+           fetch-depth: 2
+           
+       - name: Detect file diff
+      run: |
+        echo "Listing modified files from the last commit:"
+        git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt dataflow/templates/
+        cat diff.txt
+
+       
+     
   
