@@ -18,7 +18,7 @@ on:
     - closed
     
     jobs:
-      checkout-job:
+      name: checkout-job
       runs-on: ubuntu-latest
       defaults:
         run:
@@ -27,7 +27,7 @@ on:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      check-job:
+      name: check-job
        needs: job1
        runs-on: ubuntu-latest
        strategy:
