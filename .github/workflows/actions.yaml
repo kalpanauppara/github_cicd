@@ -8,18 +8,18 @@ on:
    
 jobs:
   dataflow-job:
-  runs-on: ubuntu-latest
-  defaults:
-   run:
+   runs-on: ubuntu-latest
+    defaults:
+    run:
     shell: bash
     steps:
     - name: Checkout code
-        uses: actions/checkout@v2
+      uses: actions/checkout@v2
       
    dataflow-push: 
-   needs: dataflow-job
-   runs-on: ubuntu-latest
-   strategy:
+    needs: dataflow-job
+    runs-on: ubuntu-latest
+    strategy:
       matrix: 
         directory: [dataflow/templates]
         steps:
