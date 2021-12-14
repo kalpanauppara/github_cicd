@@ -2,14 +2,14 @@ name: DataflowEXP_Workflow
 on:
   push:
     branches:
-    - 'feature/poc_df'
+    - 'feature/poc_dfexp'
     #- '!development'
     #- '!release/**'
     # - '!master'
     #- '!hotfix/**'
   pull_request:
     branches:
-    - 'poc_df'
+    - 'poc_dfexp'
    # - 'development'
    # - 'release/**'
    # - 'master'
