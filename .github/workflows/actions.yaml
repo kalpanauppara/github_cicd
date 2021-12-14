@@ -1,10 +1,21 @@
 name: DataflowEXP_Workflow
 on:
-  pull_request:
   push:
     branches:
-     - feature/poc_dfexp
-     - poc_dfexp
+    - 'feature/poc_df'
+    #- '!development'
+    #- '!release/**'
+    # - '!master'
+    #- '!hotfix/**'
+  pull_request:
+    branches:
+    - 'poc_df'
+   # - 'development'
+   # - 'release/**'
+   # - 'master'
+   # - 'hotfix/**'
+    types: 
+    - closed
    
 jobs:
   dataflow-job:
