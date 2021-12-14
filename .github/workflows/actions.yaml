@@ -18,7 +18,7 @@ on:
     - closed
    
 jobs:
-  dataflow-job:
+  name: dataflow-job
    runs-on: ubuntu-latest
    defaults:
      run:
@@ -27,7 +27,7 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v2
       
-  dataflow-push: 
+  name: dataflow-push
     needs: dataflow-job
     runs-on: ubuntu-latest
     strategy:
@@ -42,9 +42,10 @@ jobs:
     - name: Detect file diff
       run: |
          echo "Listing modified files from the last commit:"
-         git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt dataflow/templates/
-         cat diff.txt
-         echo `cat diff.txt`
+         #git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt dataflow/templates/
+         git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g'
+         #cat diff.txt
+         #echo `cat diff.txt`
         
         
       
