@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        directory: [dataflow/templates]
+        directory: [dataflow/templates/golden_record,dataflow/templates/omds]
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -31,6 +31,6 @@ jobs:
     - name: Detect file diff
       run: |
          echo "Listing modified files from the last commit:"
-         git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt dataflow/templates/
+         git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt $directory
          cat diff.txt
          echo `cat diff.txt`
