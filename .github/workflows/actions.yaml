@@ -34,3 +34,8 @@ jobs:
          git diff HEAD~1 --name-only --diff-filter=MA --output=diff.txt SQL-files
          cat diff.txt
          echo `cat diff.txt`
+         #copying the file to gcs            
+         for i in `cat diff.txt`; do
+         directory=`echo $i | cut -d '/' -f 2`
+         echo $directory
+         
