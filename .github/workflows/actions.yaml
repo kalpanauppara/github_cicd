@@ -38,4 +38,5 @@ jobs:
          for i in `cat diff.txt`; do
          directory=`echo $i | cut -d '/' -f 2`
          echo $directory
+         done
          
