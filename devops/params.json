@@ -1,0 +1,7 @@
+{   
+    "dev": {
+        #"PROJECT":"dev-amea-analyt-datal-svc",
+        
+      #"GCSBUCKET":"gs://asia-northeast1-dev-amea-an-6da2b319-bucket/dags/C360-SQL-FILES"
+        "GCSBUCKET":"gcsbucketpoc@appspot.gserviceaccount.com "
+    },
